@@ -14,6 +14,7 @@ cv2.setUseOptimized(True)
 cv2.setNumThreads(multiprocessing.cpu_count()-1)
 config = yolo_directory + 'yolov3.cfg'
 weights = yolo_directory + 'yolov3.weights'
+
 coco_labels = ['person', 'bicycle', 'car', 'motorbike', 'aeroplane', 'bus',
                'train', 'truck', 'boat', 'traffic light', 'fire hydrant',
                'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog',
@@ -30,6 +31,7 @@ coco_labels = ['person', 'bicycle', 'car', 'motorbike', 'aeroplane', 'bus',
                'clock', 'vase', 'scissors', 'teddy bear', 'hair drier',
                'toothbrush']
 colors = np.random.randint(0, 255, size = (len(coco_labels), 3), dtype = "uint8")
+
 net = cv2.dnn.readNetFromDarknet(config, weights)
 net.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
 net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
