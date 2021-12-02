@@ -81,4 +81,4 @@ while count < 600:
         cv2.waitKey(1)
         count += 1
 capture.release()
-cv2. destroyAllWindows()
+cv2.destroyAllWindows()
